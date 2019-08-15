@@ -19,7 +19,8 @@
     <meta name="keywords" content="前端,js,学习">
 
 
-    <meta name="description" content>
+    <meta name="description" content="项目地址:https://github.com/shuiyuan1995/2019/blob/master/module/src/components/swiper.vue
+html代码  12...">
 
 
 
@@ -31,7 +32,7 @@
     <!--Title-->
 
 
-<title>3d轮播相册 | Hexo</title>
+<title>3D轮播相册 | Hexo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -136,9 +137,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="3d轮播相册">
+        <h1 id="3D轮播相册">
             
-	            3d轮播相册
+	            3D轮播相册
             
         </h1>
         <div class="post-meta">
@@ -174,7 +175,57 @@
     </div>
     
     <div class="post-body post-content">
-        
+        <p><img src="https://raw.githubusercontent.com/shuiyuan1995/2019/master/img/01.png" alt><br><a href="https://github.com/shuiyuan1995/2019/blob/master/module/src/components/swiper.vue" target="_blank" rel="noopener">项目地址</a>:<a href="https://github.com/shuiyuan1995/2019/blob/master/module/src/components/swiper.vue" target="_blank" rel="noopener">https://github.com/shuiyuan1995/2019/blob/master/module/src/components/swiper.vue</a></p>
+<h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;swiper&quot; ondragstart=&quot;return false&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;wrap&quot; id=&quot;wrap&quot;&gt;</span><br><span class="line">    &lt;img v-for=&quot;(arr, index) in arrs&quot; :key=&quot;index&quot;</span><br><span class="line">    :src=&quot;arr.img&quot; alt=&quot;&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>  vue for循环加载数据</p>
+<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">arrs:[</span><br><span class="line">  &#123;img:&apos;img/0.jpeg&apos;&#125;,</span><br><span class="line">  &#123;img:&apos;img/1.jpeg&apos;&#125;,</span><br><span class="line">  &#123;img:&apos;img/2.jpeg&apos;&#125;,</span><br><span class="line">  &#123;img:&apos;img/3.jpg&apos;&#125;,</span><br><span class="line">  &#123;img:&apos;img/4.jpeg&apos;&#125;,</span><br><span class="line">  &#123;img:&apos;img/5.jpeg&apos;&#125;,</span><br><span class="line">  &#123;img:&apos;img/6.jpeg&apos;&#125;,</span><br><span class="line">  &#123;img:&apos;img/7.jpeg&apos;&#125;,</span><br><span class="line">  &#123;img:&apos;img/8.jpeg&apos;&#125;,</span><br><span class="line">  &#123;img:&apos;img/9.jpeg&apos;&#125;,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+<p>  需要加载图片数据</p>
+<h2 id="css代码"><a href="#css代码" class="headerlink" title="css代码"></a>css代码</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.swiper</span><br><span class="line">  perspective 800px</span><br><span class="line">.wrap</span><br><span class="line">  width 133px</span><br><span class="line">  height 200px</span><br><span class="line">  margin 150px auto </span><br><span class="line">  position relative</span><br><span class="line">  transform-style preserve-3d</span><br><span class="line">  transform rotateX(-20deg)</span><br><span class="line">  img </span><br><span class="line">    width 100%</span><br><span class="line">    height 100%</span><br><span class="line">    position absolute</span><br><span class="line">    transition transform .5s ease</span><br></pre></td></tr></table></figure>
+<p>  stylus预定义css，渲染样式</p>
+<h2 id="js逻辑"><a href="#js逻辑" class="headerlink" title="js逻辑"></a>js逻辑</h2><h3 id="js初始化"><a href="#js初始化" class="headerlink" title="js初始化"></a>js初始化</h3><ol>
+<li>因为加载时轮播图有一个展开动画，所以必须在页面加载完成后启动js。</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 初始化</span><br><span class="line">window.onload = () =&gt; &#123;</span><br><span class="line">  this.init()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取图片元素，数据长度并计算出图片的旋转度数。</p>
+</li>
+<li>循环数组给每一张图片设置旋转角度，轴位移长度，计算出为移动化延迟。</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">init()&#123;</span><br><span class="line">  // 获取元素</span><br><span class="line">  let oImg = document.getElementsByTagName(&quot;img&quot;);</span><br><span class="line">  let imgL = this.arrs.length</span><br><span class="line">  let deg = 360/imgL</span><br><span class="line">  // 循环设置</span><br><span class="line">  for (let i = 0; i &lt; imgL; i++) &#123;</span><br><span class="line">    // 设置旋转</span><br><span class="line">    let countdeg = deg*i;</span><br><span class="line">    oImg[i].style.transform = `rotateY($&#123;countdeg&#125;deg) translateZ(350px)`</span><br><span class="line">    // 计算延迟</span><br><span class="line">    let delaytime = imgL - i</span><br><span class="line">    oImg[i].style.transitionDelay=`$&#123;delaytime/10&#125;s`</span><br><span class="line">  &#125;</span><br><span class="line">  // 开启拖拽</span><br><span class="line">  this.drag()</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="js拖拽"><a href="#js拖拽" class="headerlink" title="js拖拽"></a>js拖拽</h3><ol>
+<li>鼠标按下时获取并保存鼠标位置。</li>
+<li>鼠标移动时，获取并保存每一次移动坐标点，根据移动坐标点与之前保存坐标相减获取差值除以10。</li>
+<li>轮播图当前旋转度数加上差值获取旋转角度并设置。</li>
+<li>保存当前鼠标坐标值。</li>
+<li>鼠标松开后，取消鼠标移动函数</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// 拖拽动作</span><br><span class="line">drag()&#123;</span><br><span class="line">  // 鼠标按下</span><br><span class="line">  let self = this</span><br><span class="line">  document.onmousedown = function(e) &#123;</span><br><span class="line">    // 鼠标点击位置</span><br><span class="line">    let oldx = e.clientX</span><br><span class="line">    let oldy = e.clientY</span><br><span class="line">    // 鼠标移动</span><br><span class="line">    this.onmousemove = e =&gt; &#123;</span><br><span class="line">      // 移动坐标</span><br><span class="line">      let x = e.clientX</span><br><span class="line">      let y = e.clientY</span><br><span class="line">      // 旋转度数</span><br><span class="line">      self.rotateY += (x - oldx)/10</span><br><span class="line">      self.rotateX += (y - oldy)/10</span><br><span class="line">      document.getElementById(&apos;wrap&apos;).style.transform = `rotateY($&#123;self.rotateY&#125;deg) rotateX($&#123;self.rotateX&#125;deg)`</span><br><span class="line">      oldx = x</span><br><span class="line">      oldy = y</span><br><span class="line">    &#125;</span><br><span class="line">    // 鼠标松开</span><br><span class="line">    this.onmouseup = () =&gt; &#123;</span><br><span class="line">      this.onmousemove = null;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="额外知识-ondragstart事件"><a href="#额外知识-ondragstart事件" class="headerlink" title="额外知识 ondragstart事件"></a>额外知识 ondragstart事件</h2><ol>
+<li>ondragstart 事件在用户开始拖动元素或选择的文本时触发。</li>
+<li>为了让元素可拖动，需要使用 HTML5 draggable 属性。</li>
+<li>链接和图片默认是可拖动的，不需要 draggable 属性。</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p draggable=&quot;true&quot; ondragstart=&quot;return false&quot;&gt;禁止拖动!&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在拖放的过程中会触发以下事件：</p>
+<ol>
+<li>在拖动目标上触发事件 (源元素):<ol>
+<li>ondragstart - 用户开始拖动元素时触发。</li>
+<li>ondrag - 元素正在拖动时触发。</li>
+<li>ondragend - 用户完成元素拖动后触发。</li>
+</ol>
+</li>
+<li>释放目标时触发的事件:<ol>
+<li>ondragenter - 当被鼠标拖动的对象进入其容器范围内时触发此事件。</li>
+<li>ondragover - 当某被拖动的对象在另一对象容器范围内拖动时触发此事件。</li>
+<li>ondragleave - 当被鼠标拖动的对象离开其容器范围内时触发此事件。</li>
+<li>ondrop - 在一个拖动过程中，释放鼠标键时触发此事件</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
     </div>
     
     <div class="post-footer">
@@ -190,6 +241,11 @@
 </article>
 
 <div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/08/15/面试题收集/" class="pre-post btn btn-default" title="面试题收集">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">面试题收集</span>
+        </a>
     
     
         <a href="/2019/03/04/学习es6-Promise理解/" class="next-post btn btn-default" title="学习es6 Promise笔记">
@@ -210,7 +266,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <p>暂无目录</p>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#html代码"><span class="toc-text">html代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据"><span class="toc-text">数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css代码"><span class="toc-text">css代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js逻辑"><span class="toc-text">js逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#js初始化"><span class="toc-text">js初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js拖拽"><span class="toc-text">js拖拽</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#额外知识-ondragstart事件"><span class="toc-text">额外知识 ondragstart事件</span></a></li></ol>
         
     </div>
 </aside>
